@@ -40,11 +40,16 @@ export default function LoginPage() {
           className="flex items-center gap-2 group"
           aria-label="Volver al inicio"
         >
-          <div className="bg-white/90 rounded-xl px-3 py-1.5">
+          <div
+            className="px-3 py-1.5"
+            style={{
+              background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 55%, transparent 80%)',
+            }}
+          >
             <img
               src={asset('assets/logo.png')}
               alt="ScadaTech logo"
-              className="h-14 w-auto object-contain group-hover:opacity-90 transition-opacity"
+              className="h-14 w-auto object-contain drop-shadow-md group-hover:opacity-90 transition-opacity"
             />
           </div>
         </a>

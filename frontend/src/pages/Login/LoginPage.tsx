@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Eye, EyeOff, ArrowLeft, Loader2 } from 'lucide-react'
+import { asset } from '@/lib/utils/assets'
 
 export default function LoginPage() {
   const navigate   = useNavigate()
@@ -39,11 +40,13 @@ export default function LoginPage() {
           className="flex items-center gap-2 group"
           aria-label="Volver al inicio"
         >
-          <img
-            src="/assets/logo.png"
-            alt="ScadaTech logo"
-            className="h-20 w-auto object-contain group-hover:opacity-90 transition-opacity"
-          />
+          <div className="bg-white/90 rounded-xl px-3 py-1.5">
+            <img
+              src={asset('assets/logo.png')}
+              alt="ScadaTech logo"
+              className="h-14 w-auto object-contain group-hover:opacity-90 transition-opacity"
+            />
+          </div>
         </a>
 
         <button

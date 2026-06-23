@@ -1,8 +1,9 @@
 import { Server, Wrench, Globe, Cpu, ArrowRight } from 'lucide-react'
+import { asset } from '@/lib/utils/assets'
 
 const otherProducts = [
   {
-    img:   '/assets/foxden.png',
+    img:   asset('assets/foxden.png'),
     icon:  null,
     name:  'FoxDen',
     desc:  'Gestión de base de datos integrada con la plataforma SkyFox.',
@@ -10,7 +11,7 @@ const otherProducts = [
     bg:    'bg-brand-electric/10',
   },
   {
-    img:   '/assets/foxbuilder.png',
+    img:   asset('assets/foxbuilder.png'),
     icon:  null,
     name:  'FoxBuilder Industrial',
     desc:  'Constructor visual de soluciones de automatización industrial.',

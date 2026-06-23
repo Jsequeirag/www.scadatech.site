@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
+import { asset } from '@/lib/utils/assets'
 
 const navLinks = [
   { label: 'Inicio',        href: '#inicio' },
@@ -46,11 +47,13 @@ export default function Navbar() {
             className="flex items-center group"
             aria-label="ScadaTech — ir al inicio"
           >
-            <img
-              src="/assets/logo.png"
-              alt="ScadaTech logo"
-              className="h-24 w-auto object-contain group-hover:opacity-90 transition-opacity"
-            />
+            <div className="bg-white/90 backdrop-blur-sm rounded-xl px-3 py-1.5 shadow-md group-hover:bg-white transition-colors duration-150">
+              <img
+                src={asset('assets/logo.png')}
+                alt="ScadaTech logo"
+                className="h-16 w-auto object-contain"
+              />
+            </div>
           </a>
 
           <nav aria-label="Navegación principal" className="hidden lg:flex items-center gap-1">

@@ -1,4 +1,5 @@
 import { Mail, Phone, MessageCircle } from 'lucide-react'
+import { asset } from '@/lib/utils/assets'
 
 const navLinks = [
   { label: 'Inicio',        href: '#inicio' },
@@ -34,11 +35,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="mb-4">
-              <img
-                src="/assets/logo.png"
-                alt="ScadaTech logo"
-                className="h-24 w-auto object-contain"
-              />
+              <div className="inline-block bg-white/90 rounded-xl px-3 py-1.5">
+                <img
+                  src={asset('assets/logo.png')}
+                  alt="ScadaTech logo"
+                  className="h-16 w-auto object-contain"
+                />
+              </div>
             </div>
             <p className="text-sm text-text-light leading-relaxed mb-4">
               Automatización y Control. Programa desde la nube y llega más lejos con SkyFox Web Server.

@@ -1,4 +1,5 @@
 import { ArrowRight, ChevronDown, Cloud, Code2, Globe } from 'lucide-react'
+import { asset } from '@/lib/utils/assets'
 
 export default function HeroSection() {
   const scrollTo = (href: string) => {
@@ -90,7 +91,7 @@ export default function HeroSection() {
               <div className="absolute inset-0 bg-brand-electric/20 rounded-3xl blur-2xl scale-110" />
 
               <img
-                src="/assets/skyfox.png"
+                src={asset('assets/skyfox.png')}
                 alt="SkyFox Web Server — plataforma cloud para desarrollo de aplicaciones web"
                 className="relative z-10 w-full max-w-md rounded-2xl drop-shadow-2xl"
               />

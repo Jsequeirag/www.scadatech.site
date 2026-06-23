@@ -64,9 +64,15 @@ export default function Navbar() {
               </a>
             ))}
             <a
+              href="#"
+              className="ml-2 px-4 py-2 text-sm font-medium text-text-light border border-border-dark hover:border-brand-cyan/50 hover:text-white rounded-lg transition-all duration-150 active:scale-95 hover:bg-white/5"
+            >
+              Accede a tu cuenta
+            </a>
+            <a
               href="#planes"
               onClick={(e) => handleLink(e, '#planes')}
-              className="ml-3 px-5 py-2 text-sm font-semibold text-white bg-brand-electric hover:bg-primary-hover rounded-lg transition-all duration-150 active:scale-95 shadow-glow-blue"
+              className="ml-1 px-5 py-2 text-sm font-semibold text-white bg-brand-electric hover:bg-primary-hover rounded-lg transition-all duration-150 active:scale-95 shadow-glow-blue"
             >
               Empezar gratis
             </a>
@@ -97,9 +103,15 @@ export default function Navbar() {
               </a>
             ))}
             <a
+              href="#"
+              className="px-4 py-3 text-sm font-medium text-text-light border border-border-dark hover:border-brand-cyan/50 hover:text-white text-center rounded-lg transition-colors"
+            >
+              Accede a tu cuenta
+            </a>
+            <a
               href="#planes"
               onClick={(e) => handleLink(e, '#planes')}
-              className="mt-2 px-4 py-3 text-sm font-semibold text-white text-center bg-brand-electric hover:bg-primary-hover rounded-lg transition-colors active:scale-95"
+              className="px-4 py-3 text-sm font-semibold text-white text-center bg-brand-electric hover:bg-primary-hover rounded-lg transition-colors active:scale-95"
             >
               Empezar gratis
             </a>

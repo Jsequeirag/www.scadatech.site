@@ -1,14 +1,14 @@
-import {
-  Tractor, HeartPulse, Truck, ShoppingBag, Building2, Zap,
-} from 'lucide-react'
+import { Tractor, HeartPulse, Truck, ShoppingBag, Building2, Zap, Utensils, Factory } from 'lucide-react'
 
-const cases = [
-  { icon: Tractor,    label: 'Agrícola y Ganadero',  desc: 'Control de cultivos, ganado y maquinaria desde campo.' },
-  { icon: HeartPulse, label: 'Salud',                 desc: 'Clínicas y hospitales con registros digitales remotos.' },
-  { icon: Truck,      label: 'Transporte',             desc: 'Marítimo, aéreo y terrestre con seguimiento en tiempo real.' },
-  { icon: ShoppingBag,label: 'Comercial',              desc: 'Inventarios, ventas y atención al cliente integrados.' },
-  { icon: Building2,  label: 'Empresarial',            desc: 'Gestión de procesos y datos corporativos centralizados.' },
-  { icon: Zap,        label: 'Industria Eléctrica',    desc: 'Monitoreo y control de sistemas eléctricos en la nube.' },
+const sectors = [
+  { icon: Tractor,    label: 'Agrícola',          sub: 'y ganadera' },
+  { icon: HeartPulse, label: 'Salud',              sub: 'clínicas / hospitales' },
+  { icon: Truck,      label: 'Transporte',         sub: 'marítimo · aéreo · terrestre' },
+  { icon: ShoppingBag,label: 'Comercial',          sub: 'ventas y gestión' },
+  { icon: Building2,  label: 'Empresarial',        sub: 'procesos corporativos' },
+  { icon: Utensils,   label: 'Ind. Alimenticia',   sub: 'control de producción' },
+  { icon: Zap,        label: 'Eléctrica',          sub: 'sistemas de control' },
+  { icon: Factory,    label: 'Industrial',         sub: 'automatización' },
 ]
 
 export default function UseCasesSection() {
@@ -16,50 +16,140 @@ export default function UseCasesSection() {
     <section id="sectores" className="bg-brand-dark min-h-screen flex flex-col justify-center py-20 lg:py-24">
       <div className="container">
 
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <p className="text-xs font-bold text-brand-cyan uppercase tracking-widest mb-3">
-            Sectores
-          </p>
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-            ScadaTech funciona en{' '}
-            <span className="text-brand-cyan">todas las industrias</span>
+        {/* Title */}
+        <div className="flex items-center gap-3 mb-8">
+          <span className="text-2xl">📌</span>
+          <h2 className="text-2xl lg:text-3xl font-bold text-white">
+            Acerca de la{' '}
+            <span className="text-brand-cyan">Captura Remota de Datos</span>
           </h2>
-          <p className="text-text-light leading-relaxed">
-            No importa el sector — si necesitas capturar datos, gestionar usuarios
-            o ejecutar lógica de negocio, SkyFox es para ti.
-          </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-          {cases.map(({ icon: Icon, label, desc }) => (
-            <div
-              key={label}
-              className="group flex flex-col items-center text-center gap-3 p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-brand-cyan/40 transition-all duration-200"
-            >
-              <div className="w-12 h-12 rounded-xl bg-brand-electric/20 flex items-center justify-center group-hover:bg-brand-electric/30 transition-colors">
-                <Icon size={22} className="text-brand-cyan" />
-              </div>
-              <p className="text-xs font-semibold text-white leading-tight">{label}</p>
-              <p className="text-xs text-text-light leading-tight hidden sm:block">{desc}</p>
+        {/* Main content grid */}
+        <div className="grid lg:grid-cols-2 gap-10 items-start mb-12">
+
+          {/* Left: Text */}
+          <div className="space-y-4 text-text-light leading-relaxed">
+            <p>
+              La captura de datos en el campo{' '}
+              <em className="text-white font-medium">
+                (fuera de las instalaciones donde no hay computadoras)
+              </em>{' '}
+              siempre es esencial. Normalmente necesitarás utilizar{' '}
+              <strong className="text-white">tablets o los mismos teléfonos móviles (celulares)</strong>{' '}
+              para la captura de datos. Aquí es donde entran en juego las{' '}
+              <span className="text-brand-cyan font-medium">Aplicaciones Web...</span>
+            </p>
+
+            <p>
+              Estas te ayudarán a mostrar pantallas de captura de datos para guardarlos
+              en una Base de Datos determinada, ya sea en un servidor físico o virtual
+              en la nube de internet.
+            </p>
+
+            <p>
+              Es importante saber que en muchas ocasiones{' '}
+              <strong className="text-white">
+                no es necesario trasladar todo un proyecto a la web.
+              </strong>{' '}
+              Basta solo con desarrollar aquellas pantallas que se requieren para capturar
+              cierta información que luego será procesada.
+            </p>
+
+            <div className="pt-2 border-t border-white/10">
+              <p className="text-sm text-text-light mb-2">Esto ocurre en todas las áreas como:</p>
+              <p className="text-sm">
+                <span className="text-brand-cyan font-medium">agrícola</span>
+                {' — '}
+                <span className="text-brand-cyan font-medium">ganadera</span>
+                {' — '}
+                <span className="text-brand-cyan font-medium">salud (clínicas/hospitales)</span>
+                {' — '}
+                <span className="text-brand-cyan font-medium">transporte (marítimo·aéreo·terrestre)</span>
+                {' — '}
+                <span className="text-brand-cyan font-medium">comercial</span>
+                {' — '}
+                <span className="text-brand-cyan font-medium">empresarial</span>
+                {' — '}
+                <span className="text-brand-cyan font-medium">industria alimenticia</span>
+                {' — '}
+                <span className="text-brand-cyan font-medium">eléctrica</span>
+                {' — etc...'}
+              </p>
             </div>
-          ))}
+          </div>
+
+          {/* Right: Visual */}
+          <div className="flex flex-col gap-4">
+            {/* Devices illustration */}
+            <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-brand-electric/20 flex items-center justify-center shrink-0">
+                  <span className="text-xl">🌐</span>
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-white">SkyFox Web Server</p>
+                  <p className="text-xs text-text-light">Captura de datos en cualquier dispositivo</p>
+                </div>
+              </div>
+
+              {/* Device list */}
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  { emoji: '📱', device: 'Teléfono móvil',  desc: 'Captura en campo' },
+                  { emoji: '📟', device: 'Tablet',           desc: 'Formularios remotos' },
+                  { emoji: '💻', device: 'Computadora',      desc: 'Gestión en oficina' },
+                  { emoji: '🖥️', device: 'Servidor / Nube',  desc: 'Base de datos central' },
+                ].map(({ emoji, device, desc }) => (
+                  <div key={device} className="flex items-center gap-2 p-3 rounded-xl bg-white/5 border border-white/10">
+                    <span className="text-lg">{emoji}</span>
+                    <div>
+                      <p className="text-xs font-semibold text-white">{device}</p>
+                      <p className="text-xs text-text-light">{desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-4 pt-4 border-t border-white/10 text-center">
+                <p className="text-xs text-brand-cyan font-medium">
+                  Un solo link · Cualquier lugar · Tiempo real
+                </p>
+              </div>
+            </div>
+
+            {/* Key insight */}
+            <div className="rounded-2xl bg-brand-electric/15 border border-brand-electric/30 p-5">
+              <p className="text-sm text-white font-semibold mb-1">💡 No necesitas migrar todo</p>
+              <p className="text-sm text-text-light leading-relaxed">
+                Solo desarrolla las pantallas de captura que necesitas.
+                El resto de tu sistema puede seguir operando como siempre.
+              </p>
+            </div>
+          </div>
         </div>
 
-        {/* CTA */}
-        <div className="mt-14 text-center">
-          <p className="text-text-light text-sm mb-4">
-            ¿Tu sector no está aquí? SkyFox se adapta a cualquier necesidad.
+        {/* Sector cards */}
+        <div>
+          <p className="text-xs font-bold text-muted uppercase tracking-widest mb-5 text-center">
+            Sectores donde se aplica
           </p>
-          <button
-            onClick={() => {
-              const el = document.querySelector('#contacto')
-              if (el) el.scrollIntoView({ behavior: 'smooth' })
-            }}
-            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-brand-dark bg-brand-cyan hover:bg-brand-cyan/90 rounded-lg transition-all duration-150 active:scale-95"
-          >
-            Cuéntanos tu proyecto
-          </button>
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
+            {sectors.map(({ icon: Icon, label, sub }) => (
+              <div
+                key={label}
+                className="flex flex-col items-center text-center gap-2 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-brand-cyan/40 transition-all duration-200"
+              >
+                <div className="w-10 h-10 rounded-lg bg-brand-electric/20 flex items-center justify-center">
+                  <Icon size={18} className="text-brand-cyan" />
+                </div>
+                <p className="text-xs font-semibold text-white leading-tight">{label}</p>
+                <p className="text-[10px] text-text-light leading-tight">{sub}</p>
+              </div>
+            ))}
+          </div>
         </div>
+
       </div>
     </section>
   )

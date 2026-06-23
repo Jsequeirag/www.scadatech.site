@@ -49,7 +49,7 @@ export default function Navbar() {
             <img
               src="/assets/logo.png"
               alt="ScadaTech logo"
-              className="h-10 w-auto object-contain brightness-0 invert group-hover:opacity-90 transition-opacity"
+              className="h-10 w-auto object-contain group-hover:opacity-90 transition-opacity"
             />
           </a>
 

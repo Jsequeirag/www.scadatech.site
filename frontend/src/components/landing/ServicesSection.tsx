@@ -1,118 +1,154 @@
-import { Server, Database, Layers, Wrench, BookOpen, Globe } from 'lucide-react'
+import { Server, Database, Layers, Wrench, Globe, Cpu, ArrowRight } from 'lucide-react'
 
-const products = [
+const otherProducts = [
   {
-    icon:   Server,
-    name:   'SkyFox Web Server',
-    tag:    'Producto principal',
-    desc:   'Plataforma cloud para desarrollar y ejecutar aplicaciones web con programación procedural orientada a objetos. Sin instalaciones, desde cualquier navegador.',
-    color:  'text-brand-cyan',
-    bg:     'bg-brand-cyan/10',
-    border: 'border-brand-cyan/20',
-    highlight: true,
+    icon:  Database,
+    name:  'FoxDen',
+    desc:  'Gestión de base de datos integrada con la plataforma SkyFox.',
+    color: 'text-brand-electric',
+    bg:    'bg-brand-electric/10',
   },
   {
-    icon:   Database,
-    name:   'FoxDen',
-    tag:    'Base de datos',
-    desc:   'Solución de gestión de base de datos integrada con la plataforma SkyFox para almacenar y administrar datos de tus aplicaciones.',
-    color:  'text-brand-electric',
-    bg:     'bg-brand-electric/10',
-    border: 'border-brand-electric/20',
-    highlight: false,
+    icon:  Cpu,
+    name:  'DLL',
+    desc:  'Librería de componentes dinámicos para extender funcionalidades.',
+    color: 'text-amber',
+    bg:    'bg-amber/10',
   },
   {
-    icon:   Layers,
-    name:   'FoxBuilder Industrial',
-    tag:    'Automatización',
-    desc:   'Herramienta avanzada para construcción de soluciones de automatización y control industrial, con interfaz visual de diseño.',
-    color:  'text-amber',
-    bg:     'bg-amber/10',
-    border: 'border-amber/20',
-    highlight: false,
+    icon:  Wrench,
+    name:  'WT (WorkTool)',
+    desc:  'Herramientas complementarias para desarrollo y mantenimiento.',
+    color: 'text-green-400',
+    bg:    'bg-green-400/10',
   },
   {
-    icon:   Wrench,
-    name:   'WT (WorkTool)',
-    tag:    'Utilitarios',
-    desc:   'Conjunto de herramientas complementarias para optimizar el desarrollo y mantenimiento de aplicaciones en la plataforma ScadaTech.',
-    color:  'text-green-400',
-    bg:     'bg-green-400/10',
-    border: 'border-green-400/20',
-    highlight: false,
+    icon:  Layers,
+    name:  'FoxBuilder Industrial',
+    desc:  'Constructor visual de soluciones de automatización industrial.',
+    color: 'text-purple-400',
+    bg:    'bg-purple-400/10',
   },
   {
-    icon:   Globe,
-    name:   'Captura Remota de Datos',
-    tag:    'Movilidad',
-    desc:   'Formularios web accesibles desde campo con teléfonos o tablets. Datos centralizados en tiempo real sin desplazarse a oficina.',
-    color:  'text-purple-400',
-    bg:     'bg-purple-400/10',
-    border: 'border-purple-400/20',
-    highlight: false,
-  },
-  {
-    icon:   BookOpen,
-    name:   'Capacitación Internacional',
-    tag:    'Formación',
-    desc:   'Conferencias y talleres para aprender desarrollo de aplicaciones web con SkyFox. Desde principiantes hasta soluciones empresariales.',
-    color:  'text-rose-400',
-    bg:     'bg-rose-400/10',
-    border: 'border-rose-400/20',
-    highlight: false,
+    icon:  Globe,
+    name:  'Captura Remota',
+    desc:  'Formularios web para captura de datos desde campo en tiempo real.',
+    color: 'text-brand-cyan',
+    bg:    'bg-brand-cyan/10',
   },
 ]
+
+const scrollToContact = () => {
+  const el = document.querySelector('#contacto')
+  if (el) el.scrollIntoView({ behavior: 'smooth' })
+}
 
 export default function ServicesSection() {
   return (
     <section id="productos" className="bg-white min-h-screen flex flex-col justify-center py-20 lg:py-24">
-      <div className="container">
+      <div className="container space-y-16">
 
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <p className="text-xs font-bold text-brand-electric uppercase tracking-widest mb-3">
-            Productos y Servicios
+        {/* ── ¿Qué es SkyFox? ── */}
+        <div>
+          <p className="text-xs font-bold text-brand-electric uppercase tracking-widest mb-3 text-center">
+            Producto Principal
           </p>
-          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-4">
-            Todo lo que necesitas para{' '}
-            <span className="text-brand-electric">llevar tu proyecto a la web</span>
+          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-10 text-center">
+            ¿Qué es <span className="text-brand-electric">SkyFox</span>?
           </h2>
-          <p className="text-muted leading-relaxed">
-            ScadaTech ofrece una suite completa de herramientas para el desarrollo,
-            automatización y control de aplicaciones web empresariales.
-          </p>
+
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            {/* Left: description card */}
+            <div className="rounded-2xl bg-brand-dark p-8 border border-brand-electric/30 shadow-glow-blue">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 rounded-xl bg-brand-electric/20 border border-brand-electric/40 flex items-center justify-center shrink-0">
+                  <Server size={26} className="text-brand-cyan" />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-brand-cyan uppercase tracking-widest">
+                    New Evolution · New Generation
+                  </p>
+                  <p className="text-xl font-bold text-white">SkyFox Web Server</p>
+                </div>
+              </div>
+
+              <p className="text-text-light leading-relaxed mb-6">
+                <strong className="text-white">SkyFox</strong> es una plataforma instalada en la nube
+                que te permite realizar fácilmente el{' '}
+                <span className="text-brand-cyan font-medium">desarrollo y lanzamiento</span>{' '}
+                de tus propias Aplicaciones Web utilizando la poderosa programación procedural
+                (<em>propiedades y eventos</em>) orientada a objetos, con un lenguaje popular-familiar.
+              </p>
+
+              <ul className="space-y-2 mb-6">
+                {[
+                  'Sin instalaciones — solo un navegador web',
+                  'Programación orientada a objetos, propiedades y eventos',
+                  'Corre en teléfono, tablet y computadora',
+                  'Base de datos centralizada multi-usuario',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-text-light">
+                    <span className="text-brand-cyan mt-0.5">✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <button
+                onClick={scrollToContact}
+                className="flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-brand-electric hover:bg-primary-hover rounded-lg transition-all duration-150 active:scale-95"
+              >
+                Quiero saber más
+                <ArrowRight size={15} />
+              </button>
+            </div>
+
+            {/* Right: key stats */}
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { value: '100%', label: 'En la nube', sub: 'Sin instalar nada', color: 'text-brand-cyan' },
+                { value: '0',    label: 'Instalaciones', sub: 'Solo un link de acceso', color: 'text-green-400' },
+                { value: 'Multi', label: 'Usuario', sub: 'Hasta 20 concurrentes', color: 'text-brand-electric' },
+                { value: '24/7', label: 'Disponible', sub: 'Desde cualquier lugar', color: 'text-amber' },
+              ].map((s) => (
+                <div
+                  key={s.label}
+                  className="p-6 rounded-2xl bg-surface-soft border border-border hover:shadow-card transition-shadow duration-200 text-center"
+                >
+                  <p className={`text-3xl font-black mb-1 ${s.color}`}>{s.value}</p>
+                  <p className="text-sm font-semibold text-text">{s.label}</p>
+                  <p className="text-xs text-muted mt-1">{s.sub}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products.map(({ icon: Icon, name, tag, desc, color, bg, border, highlight }) => (
-            <article
-              key={name}
-              className={`group p-6 rounded-2xl border transition-all duration-200 hover:-translate-y-1 ${
-                highlight
-                  ? 'bg-brand-dark border-brand-electric shadow-glow-blue'
-                  : `bg-white ${border} hover:shadow-card-hover`
-              }`}
-            >
-              <div className="flex items-start justify-between mb-5">
-                <div className={`w-12 h-12 rounded-xl ${highlight ? 'bg-brand-cyan/20' : bg} flex items-center justify-center`}>
-                  <Icon size={22} className={highlight ? 'text-brand-cyan' : color} />
+        {/* ── Otros productos ── */}
+        <div>
+          <p className="text-xs font-bold text-muted uppercase tracking-widest mb-3 text-center">
+            Suite completa
+          </p>
+          <h3 className="text-2xl lg:text-3xl font-bold text-text mb-8 text-center">
+            Otros Productos de <span className="text-brand-electric">ScadaTech</span>
+          </h3>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {otherProducts.map(({ icon: Icon, name, desc, color, bg }) => (
+              <article
+                key={name}
+                className="group flex flex-col items-center text-center gap-3 p-5 rounded-2xl bg-surface-soft border border-border hover:border-brand-electric/40 hover:shadow-card hover:bg-white transition-all duration-200 hover:-translate-y-1"
+              >
+                <div className={`w-12 h-12 rounded-xl ${bg} flex items-center justify-center`}>
+                  <Icon size={22} className={color} />
                 </div>
-                <span className={`text-xs font-semibold px-2 py-1 rounded-full ${
-                  highlight
-                    ? 'bg-brand-electric/20 text-brand-cyan'
-                    : 'bg-surface-soft text-muted border border-border'
-                }`}>
-                  {tag}
-                </span>
-              </div>
-              <h3 className={`text-base font-semibold mb-2 ${highlight ? 'text-white' : 'text-text'}`}>
-                {name}
-              </h3>
-              <p className={`text-sm leading-relaxed ${highlight ? 'text-text-light' : 'text-muted'}`}>
-                {desc}
-              </p>
-            </article>
-          ))}
+                <p className="text-sm font-semibold text-text leading-tight">{name}</p>
+                <p className="text-xs text-muted leading-snug">{desc}</p>
+              </article>
+            ))}
+          </div>
         </div>
+
       </div>
     </section>
   )

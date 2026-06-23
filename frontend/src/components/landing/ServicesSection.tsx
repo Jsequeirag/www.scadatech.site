@@ -1,35 +1,40 @@
-import { Server, Database, Layers, Wrench, Globe, Cpu, ArrowRight } from 'lucide-react'
+import { Server, Wrench, Globe, Cpu, ArrowRight } from 'lucide-react'
 
 const otherProducts = [
   {
-    icon:  Database,
+    img:   '/assets/foxden.png',
+    icon:  null,
     name:  'FoxDen',
     desc:  'Gestión de base de datos integrada con la plataforma SkyFox.',
     color: 'text-brand-electric',
     bg:    'bg-brand-electric/10',
   },
   {
-    icon:  Cpu,
-    name:  'DLL',
-    desc:  'Librería de componentes dinámicos para extender funcionalidades.',
+    img:   '/assets/foxbuilder.png',
+    icon:  null,
+    name:  'FoxBuilder Industrial',
+    desc:  'Constructor visual de soluciones de automatización industrial.',
     color: 'text-amber',
     bg:    'bg-amber/10',
   },
   {
-    icon:  Wrench,
-    name:  'WT (WorkTool)',
-    desc:  'Herramientas complementarias para desarrollo y mantenimiento.',
+    img:   null,
+    icon:  Cpu,
+    name:  'DLL',
+    desc:  'Librería de componentes dinámicos para extender funcionalidades.',
     color: 'text-green-400',
     bg:    'bg-green-400/10',
   },
   {
-    icon:  Layers,
-    name:  'FoxBuilder Industrial',
-    desc:  'Constructor visual de soluciones de automatización industrial.',
+    img:   null,
+    icon:  Wrench,
+    name:  'WT (WorkTool)',
+    desc:  'Herramientas complementarias para desarrollo y mantenimiento.',
     color: 'text-purple-400',
     bg:    'bg-purple-400/10',
   },
   {
+    img:   null,
     icon:  Globe,
     name:  'Captura Remota',
     desc:  'Formularios web para captura de datos desde campo en tiempo real.',
@@ -134,14 +139,22 @@ export default function ServicesSection() {
           </h3>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-            {otherProducts.map(({ icon: Icon, name, desc, color, bg }) => (
+            {otherProducts.map(({ img, icon: Icon, name, desc, color, bg }) => (
               <article
                 key={name}
                 className="group flex flex-col items-center text-center gap-3 p-5 rounded-2xl bg-surface-soft border border-border hover:border-brand-electric/40 hover:shadow-card hover:bg-white transition-all duration-200 hover:-translate-y-1"
               >
-                <div className={`w-12 h-12 rounded-xl ${bg} flex items-center justify-center`}>
-                  <Icon size={22} className={color} />
-                </div>
+                {img ? (
+                  <img
+                    src={img}
+                    alt={name}
+                    className="w-20 h-16 object-contain drop-shadow-sm group-hover:scale-105 transition-transform duration-200"
+                  />
+                ) : (
+                  <div className={`w-12 h-12 rounded-xl ${bg} flex items-center justify-center`}>
+                    {Icon && <Icon size={22} className={color} />}
+                  </div>
+                )}
                 <p className="text-sm font-semibold text-text leading-tight">{name}</p>
                 <p className="text-xs text-muted leading-snug">{desc}</p>
               </article>

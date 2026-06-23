@@ -47,18 +47,12 @@ export default function Navbar() {
             className="flex items-center group"
             aria-label="ScadaTech — ir al inicio"
           >
-            <div
-              className="px-3 py-1.5"
-              style={{
-                background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 55%, transparent 80%)',
-              }}
-            >
-              <img
-                src={asset('assets/logo.png')}
-                alt="ScadaTech logo"
-                className="h-16 w-auto object-contain drop-shadow-md"
-              />
-            </div>
+            <img
+              src={asset('assets/logo.png')}
+              alt="ScadaTech logo"
+              className="h-16 w-auto object-contain"
+              style={{ mixBlendMode: 'screen' }}
+            />
           </a>
 
           <nav aria-label="Navegación principal" className="hidden lg:flex items-center gap-1">

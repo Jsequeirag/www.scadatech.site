@@ -35,18 +35,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="mb-4">
-              <div
-                className="inline-block px-3 py-1.5"
-                style={{
-                  background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 55%, transparent 80%)',
-                }}
-              >
-                <img
-                  src={asset('assets/logo.png')}
-                  alt="ScadaTech logo"
-                  className="h-16 w-auto object-contain drop-shadow-md"
-                />
-              </div>
+              <img
+                src={asset('assets/logo.png')}
+                alt="ScadaTech logo"
+                className="h-16 w-auto object-contain"
+                style={{ mixBlendMode: 'screen' }}
+              />
             </div>
             <p className="text-sm text-text-light leading-relaxed mb-4">
               Automatización y Control. Programa desde la nube y llega más lejos con SkyFox Web Server.

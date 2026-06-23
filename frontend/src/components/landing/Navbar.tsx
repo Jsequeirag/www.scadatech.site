@@ -39,7 +39,7 @@ export default function Navbar() {
       }`}
     >
       <div className="container">
-        <div className="flex items-center justify-between h-28 lg:h-32">
+        <div className="flex items-center justify-between h-32 lg:h-36">
 
           <a
             href="#inicio"
@@ -51,7 +51,7 @@ export default function Navbar() {
               <img
                 src={asset('assets/logo.png')}
                 alt="ScadaTech logo"
-                className="h-14 w-auto object-contain"
+                className="h-20 w-auto object-contain"
               />
             </div>
           </a>

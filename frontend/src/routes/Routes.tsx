@@ -11,41 +11,44 @@ const PageLoader = () => (
   </div>
 )
 
-export const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <MainLayout />,
-    children: [
-      {
-        index: true,
-        element: (
-          <Suspense fallback={<PageLoader />}>
-            <Home />
-          </Suspense>
-        ),
-      },
-      {
-        path: 'login',
-        element: (
-          <Suspense fallback={<PageLoader />}>
-            <LoginPage />
-          </Suspense>
-        ),
-      },
-      {
-        path: '*',
-        element: (
-          <div className="min-h-screen flex items-center justify-center bg-brand-dark text-white">
-            <div className="text-center">
-              <p className="text-6xl font-bold text-brand-cyan mb-4">404</p>
-              <p className="text-text-light mb-6">La página que buscas no existe.</p>
-              <a href="/" className="text-sm text-brand-electric hover:underline">
-                Volver al inicio
-              </a>
+export const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <MainLayout />,
+      children: [
+        {
+          index: true,
+          element: (
+            <Suspense fallback={<PageLoader />}>
+              <Home />
+            </Suspense>
+          ),
+        },
+        {
+          path: 'login',
+          element: (
+            <Suspense fallback={<PageLoader />}>
+              <LoginPage />
+            </Suspense>
+          ),
+        },
+        {
+          path: '*',
+          element: (
+            <div className="min-h-screen flex items-center justify-center bg-brand-dark text-white">
+              <div className="text-center">
+                <p className="text-6xl font-bold text-brand-cyan mb-4">404</p>
+                <p className="text-text-light mb-6">La página que buscas no existe.</p>
+                <a href="/" className="text-sm text-brand-electric hover:underline">
+                  Volver al inicio
+                </a>
+              </div>
             </div>
-          </div>
-        ),
-      },
-    ],
-  },
-])
+          ),
+        },
+      ],
+    },
+  ],
+  { basename: import.meta.env.BASE_URL }
+)

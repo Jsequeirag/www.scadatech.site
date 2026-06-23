@@ -13,7 +13,7 @@ const cases = [
 
 export default function UseCasesSection() {
   return (
-    <section id="sectores" className="bg-brand-dark py-20 lg:py-28">
+    <section id="sectores" className="bg-brand-dark min-h-screen flex flex-col justify-center py-20 lg:py-24">
       <div className="container">
 
         <div className="text-center max-w-2xl mx-auto mb-14">

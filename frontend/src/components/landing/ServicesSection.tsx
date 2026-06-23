@@ -65,7 +65,7 @@ const products = [
 
 export default function ServicesSection() {
   return (
-    <section id="productos" className="bg-white py-20 lg:py-28">
+    <section id="productos" className="bg-white min-h-screen flex flex-col justify-center py-20 lg:py-24">
       <div className="container">
 
         <div className="text-center max-w-2xl mx-auto mb-14">

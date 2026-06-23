@@ -37,7 +37,7 @@ export default function Footer() {
               <img
                 src="/assets/logo.png"
                 alt="ScadaTech logo"
-                className="h-16 w-auto object-contain"
+                className="h-24 w-auto object-contain"
               />
             </div>
             <p className="text-sm text-text-light leading-relaxed mb-4">

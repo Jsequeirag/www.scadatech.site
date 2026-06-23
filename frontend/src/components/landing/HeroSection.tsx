@@ -83,52 +83,26 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right: Visual card */}
-          <div className="hidden lg:flex justify-center">
-            <div className="relative w-full max-w-sm">
-              <div className="rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 p-6 shadow-card">
-                {/* Simulated SkyFox UI */}
-                <div className="flex items-center gap-2 mb-4 pb-4 border-b border-white/10">
-                  <div className="flex gap-1.5">
-                    <span className="w-3 h-3 rounded-full bg-red-400" />
-                    <span className="w-3 h-3 rounded-full bg-yellow-400" />
-                    <span className="w-3 h-3 rounded-full bg-green-400" />
-                  </div>
-                  <span className="text-xs text-text-light ml-2 font-mono">SkyFox Web Server</span>
-                </div>
+          {/* Right: SkyFox product image */}
+          <div className="hidden lg:flex justify-center items-center">
+            <div className="relative">
+              {/* Glow behind image */}
+              <div className="absolute inset-0 bg-brand-electric/20 rounded-3xl blur-2xl scale-110" />
 
-                <div className="space-y-2 mb-4">
-                  {['Button', 'Label', 'Edit', 'Memo', 'CheckBox'].map((comp) => (
-                    <div key={comp} className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-sm bg-brand-electric/60" />
-                      <span className="text-xs text-text-light font-mono">{comp}</span>
-                    </div>
-                  ))}
-                </div>
+              <img
+                src="/assets/image.png"
+                alt="SkyFox Web Server — plataforma cloud para desarrollo de aplicaciones web"
+                className="relative z-10 w-full max-w-md rounded-2xl drop-shadow-2xl"
+              />
 
-                <div className="bg-white/5 rounded-lg p-3 border border-white/10 mb-4">
-                  <p className="text-xs text-text-light font-mono mb-2">Mi Aplicación Web</p>
-                  <div className="space-y-1.5">
-                    <div className="h-5 bg-white/10 rounded w-full" />
-                    <div className="h-5 bg-white/10 rounded w-3/4" />
-                    <div className="h-7 bg-brand-electric/30 rounded w-1/3 mt-3" />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-2">
-                  {[
-                    { value: '100%', label: 'En la nube' },
-                    { value: '0',    label: 'Instalaciones' },
-                  ].map((stat) => (
-                    <div key={stat.label} className="bg-white/5 rounded-xl p-3 text-center">
-                      <p className="text-sm font-bold text-brand-cyan">{stat.value}</p>
-                      <p className="text-xs text-text-light mt-0.5">{stat.label}</p>
-                    </div>
-                  ))}
-                </div>
+              {/* Badge "New Evolution" */}
+              <div className="absolute -top-4 -left-4 z-20 bg-brand-electric rounded-xl px-4 py-2 shadow-glow-blue">
+                <p className="text-xs font-bold text-white leading-tight">New Evolution</p>
+                <p className="text-xs text-brand-cyan font-semibold">New Generation</p>
               </div>
 
-              <div className="absolute -top-4 -right-4 bg-brand-electric rounded-xl px-3 py-2 shadow-glow-blue">
+              {/* Badge plan gratis */}
+              <div className="absolute -bottom-3 -right-3 z-20 bg-green-500 rounded-xl px-3 py-2 shadow-lg">
                 <p className="text-xs font-bold text-white">Plan Gratis disponible</p>
               </div>
             </div>
